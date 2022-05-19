@@ -16,12 +16,13 @@ scrape_configs:
   - job_name: 'blackbox'
     metrics_path: 'probe'
     params:
-      module: [http_2xx]  # Look for a HTTP 200 response.
+      module: [icmp]
     tls_config:
       insecure_skip_verify: true
     static_configs:
       - targets:
-        # targets here
+        - 37.228.68.201
+        - 213.230.64.98
     relabel_configs:
       - source_labels: [__address__]
         target_label: __param_target

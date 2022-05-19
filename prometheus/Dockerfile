@@ -2,7 +2,6 @@ FROM prom/prometheus:v2.0.0
 
 COPY prometheus.yml /etc/prometheus/prometheus.yml
 
-USER [nobody]
 EXPOSE 9090/tcp
 VOLUME [/prometheus]
 WORKDIR /prometheus
